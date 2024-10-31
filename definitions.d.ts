@@ -1,11 +1,15 @@
 interface Assignment {
+  id: number,
   title: string,
-  class: string,
   dueDate: string,
+  course: string,
+  completed: boolean,
 }
 
-interface AssignmentsProps {
-  assignmentList: Assignment[],
+interface AssignmentItemProps {
+  assignment: Assignment,
+  onPress: (index: number) => void,
+  isPressable: boolean,
 }
 
 interface AssetImages {
@@ -23,4 +27,30 @@ interface RouteButtonProps {
   label: string,
   condition: boolean,
   route: Href<string | object>,
+}
+
+interface AddItemModalProps {
+  title: string
+  isVisible: boolean,
+  children: ReactNode,
+  onClose: () => void,
+  onConfirm: () => void,
+  onCancel: () => void,
+  cancelShouldClose?: boolean,
+}
+
+interface ItemInputFieldProps {
+  label: string,
+  value: string,
+  onChangeText: (text: string) => void,
+}
+
+interface IconButtonProps {
+  children: ReactNode,
+  onPress: () => void,
+}
+
+interface UserCredential {
+  username: string,
+  password: string,
 }
