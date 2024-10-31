@@ -54,3 +54,16 @@ interface UserCredential {
   username: string,
   password: string,
 }
+
+interface AssignmentListProps {
+  assignments: Assignment[],
+  onSelectAssignment: (id: number) => void,
+  onDelete: () => void,
+  onAdd: () => void,
+}
+
+interface AddAssignmentModalProps {
+  isVisible: boolean,
+  onClose: () => void,
+  onAssignmentAdd: (assignment: Assignment) => void,
+}
