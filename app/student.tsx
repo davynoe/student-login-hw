@@ -4,7 +4,7 @@ import RouteButton from "@/components/RouteButton";
 import "../global.css";
 import AssignmentList from "@/components/AssignmentList";
 import AddAssignmentModal from "@/components/AddAssignmentModal";
-import useAssignment from "@/hooks/useAssignment";
+import useAssignments from "@/hooks/useAssignments";
 
 export default function Student() {
   const {
@@ -14,7 +14,7 @@ export default function Student() {
     deleteCompletedAssignments,
     modalVisibility,
     setModalVisibility,
-  } = useAssignment();
+  } = useAssignments();
 
   return (
     <SafeAreaView className="h-full w-full pt-12 bg-[#335276] flex-col items-center gap-y-10">

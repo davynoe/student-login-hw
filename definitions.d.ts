@@ -43,6 +43,7 @@ interface ItemInputFieldProps {
   label: string,
   value: string,
   onChangeText: (text: string) => void,
+  isNumeric?: boolean,
 }
 
 interface IconButtonProps {
@@ -66,4 +67,18 @@ interface AddAssignmentModalProps {
   isVisible: boolean,
   onClose: () => void,
   onAssignmentAdd: (assignment: Assignment) => void,
+}
+
+interface Student {
+  id: number,
+  name: string,
+  email: string,
+  grade: number | undefined,
+}
+
+interface GradeStudentModalProps {
+  isVisible: boolean,
+  onClose: () => void,
+  studentId: number,
+  gradeStudent: (studentId: number, grade: int) => void,
 }

@@ -1,7 +1,7 @@
 import assignmentData from "@/data/assignmentData";
 import { useState } from "react";
 
-export default function useAssignment() {
+export default function useAssignments() {
   const [assignments, setAssignments] = useState(assignmentData);
   const [modalVisibility, setModalVisibility] = useState(false);
 

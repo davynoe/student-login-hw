@@ -4,6 +4,7 @@ export default function ItemInputField({
   label,
   value,
   onChangeText,
+  isNumeric = false,
 }: ItemInputFieldProps) {
   return (
     <View className="w-[90%] flex-col gap-y-2 self-center">
@@ -12,6 +13,7 @@ export default function ItemInputField({
         className="text-base text-gray-100 bg-[#6d97c7] p-3 pl-4 w-full rounded-2xl"
         value={value}
         onChangeText={onChangeText}
+        keyboardType={isNumeric ? "number-pad" : "default"}
       />
     </View>
   );

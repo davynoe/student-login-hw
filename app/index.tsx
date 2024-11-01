@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import LoginInputField from "@/components/LoginInputField";
 import { useState } from "react";
 import RouteButton from "@/components/RouteButton";
-import "../global.css";
+import "@/global.css";
 import userData from "@/data/userData";
 
 export default function Index() {
