@@ -51,9 +51,10 @@ interface IconButtonProps {
   onPress: () => void,
 }
 
-interface UserCredential {
+interface SessionUser {
   username: string,
   password: string,
+  mode: "student" | "teacher" | "secretary",
 }
 
 interface AssignmentListProps {

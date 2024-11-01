@@ -1,12 +1,12 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, View } from "react-native";
-import RouteButton from "@/components/RouteButton";
+import { Text, TouchableOpacity, View } from "react-native";
 import "../global.css";
 import AssignmentList from "@/components/AssignmentList";
 import AddAssignmentModal from "@/components/AddAssignmentModal";
 import useAssignments from "@/hooks/useAssignments";
+import { router } from "expo-router";
 
-export default function Student() {
+export default function User() {
   const {
     assignments,
     toggleAssignmentCompletion,
@@ -37,7 +37,12 @@ export default function Student() {
         onDelete={deleteCompletedAssignments}
         onAdd={() => setModalVisibility(true)}
       />
-      <RouteButton label={"Log out"} condition={true} route={"/"} />
+      <TouchableOpacity
+        className="px-8 py-4 bg-[#4195c5] rounded-3xl"
+        onPress={() => router.push("/")}
+      >
+        <Text className="text-xl font-semibold text-white">Log out</Text>
+      </TouchableOpacity>
       <AddAssignmentModal
         isVisible={modalVisibility}
         onAssignmentAdd={addAssignment}

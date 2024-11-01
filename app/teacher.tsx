@@ -1,8 +1,8 @@
 import GradeStudentModal from "@/components/GradeStudentModal";
-import RouteButton from "@/components/RouteButton";
 import "@/global.css";
 import useStudents from "@/hooks/useStudents";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { router } from "expo-router";
 import {
   View,
   SafeAreaView,
@@ -86,7 +86,12 @@ export default function Teacher() {
           ))}
         </ScrollView>
       </View>
-      <RouteButton label="Log out" condition={true} route="/" />
+      <TouchableOpacity
+        className="px-8 py-4 bg-[#4195c5] rounded-3xl"
+        onPress={() => router.push("/")}
+      >
+        <Text className="text-xl font-semibold text-white">Log out</Text>
+      </TouchableOpacity>
       <GradeStudentModal
         isVisible={modalVisibility}
         onClose={() => setModalVisibility(false)}
